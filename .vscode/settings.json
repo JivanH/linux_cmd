@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "unistd.h": "c",
+        "dirent.h": "c",
+        "errno.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "stat.h": "c",
+        "istream": "c",
+        "fcntl.h": "c",
+        "algorithm": "c",
+        "types.h": "c",
+        "string.h": "c"
+    }
+}
