@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <dirent.h>
 #include <sys/types.h>
-#define BUFSIZE 1024
+#include <errno.h>
+#include <stdlib.h>
 int main(int argc, char** argv)
 {
 if(argc != 3)
@@ -11,16 +12,23 @@ return 1;
 
 }
     FILE *fp1, *fp2;
-    char buf[1024];
-    int pos;
-    fp1 = popen(argv[1], "r");
-    fp2 = popen(argv[2], "w");
-
-    while((pos=read(fp1, &buf, 1024)) != 0)
+    fp1 = fopen(argv[1], "r");
+    fp2 = fopen(argv[2], "w");
+    if (!fp1){
+        printf("ERROR\n");
+        return 1;
+        }
+    
+    if (fp2)
     {
-        write(fp2, &buf, 1024);
-    }
-
+       char c;
+       while ((c = fgetc(fp1)) != EOF)
+       {
+             fputc(c, fp2);
+       }
+     }
+     fclose(fp1);
+     fclose(fp2);        
 
     return 0;
     }
