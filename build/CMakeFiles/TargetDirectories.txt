@@ -1,3 +1,0 @@
-/home/vardan/linux_cmd/build/CMakeFiles/rebuild_cache.dir
-/home/vardan/linux_cmd/build/CMakeFiles/edit_cache.dir
-/home/vardan/linux_cmd/build/CMakeFiles/linux_cmd.dir

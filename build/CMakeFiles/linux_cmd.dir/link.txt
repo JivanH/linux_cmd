@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/linux_cmd.dir/cd/cd.cpp.o CMakeFiles/linux_cmd.dir/cp/cp.cpp.o CMakeFiles/linux_cmd.dir/rm/rm.cpp.o CMakeFiles/linux_cmd.dir/mv/mv.cpp.o CMakeFiles/linux_cmd.dir/grep/grep.cpp.o -o linux_cmd 
