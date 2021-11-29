@@ -59,11 +59,8 @@ int main(int argc, char* argv[]){
 	cout<<"You must enter 1) directiory. 2)word."<<endl;
     
     if(isRegular(argv[1]))
-    {
-    	char tmp[256];
-    	getcwd(tmp,256);
     	search(argv[1],argv[2],"");
-    }else 
+    else 
     	ls(argv[1],argv[2]);
     return 0;
 }
