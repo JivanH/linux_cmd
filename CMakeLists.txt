@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+project(Cmake)
+add_subdirectory(cd cd.c)
+add_subdirectory(cp cp.c)
+add_subdirectory(rm rm.c)
+add_subdirectory(mv mv.c)
+add_subdirectory(grep grep.c)
