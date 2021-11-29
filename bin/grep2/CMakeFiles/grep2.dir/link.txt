@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/grep2.dir/grep2.c.o  -o grep2 

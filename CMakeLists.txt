@@ -5,4 +5,6 @@ add_subdirectory(cd_project)
 add_subdirectory(rm_project)
 add_subdirectory(cp_project)
 add_subdirectory(grep)
+add_subdirectory(grep2)
+
 
