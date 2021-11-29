@@ -1,1 +1,0 @@
-/home/ani/Рабочий стол/linux_cmd/bin/grep

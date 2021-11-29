@@ -1,7 +1,0 @@
-/home/ani/Рабочий стол/linux_cmd/mv/build/CMakeFiles/install/strip.dir
-/home/ani/Рабочий стол/linux_cmd/mv/build/CMakeFiles/install/local.dir
-/home/ani/Рабочий стол/linux_cmd/mv/build/CMakeFiles/install.dir
-/home/ani/Рабочий стол/linux_cmd/mv/build/CMakeFiles/list_install_components.dir
-/home/ani/Рабочий стол/linux_cmd/mv/build/CMakeFiles/rebuild_cache.dir
-/home/ani/Рабочий стол/linux_cmd/mv/build/CMakeFiles/edit_cache.dir
-/home/ani/Рабочий стол/linux_cmd/mv/build/CMakeFiles/mv.dir

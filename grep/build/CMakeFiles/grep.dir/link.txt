@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/grep.dir/grep.c.o  -o grep 
