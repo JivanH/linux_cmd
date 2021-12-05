@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/cp_project.dir/cp.c.o  -o cp_project 

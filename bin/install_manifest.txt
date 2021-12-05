@@ -1,6 +1,0 @@
-/home/anna/Desktop/cmake/linux_cmd-1/mv_project/bin/mv_project
-/home/anna/Desktop/cmake/linux_cmd-1/cd_project/bin/cd_project
-/home/anna/Desktop/cmake/linux_cmd-1/rm_project/bin/rm_project
-/home/anna/Desktop/cmake/linux_cmd-1/cp_project/bin/cp_project
-/home/anna/Desktop/cmake/linux_cmd-1/grep/bin/grep
-/home/anna/Desktop/cmake/linux_cmd-1/grep2/bin/grep2
