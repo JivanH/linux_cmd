@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/file_manager.dir/file_manager.c.o  -o file_manager 

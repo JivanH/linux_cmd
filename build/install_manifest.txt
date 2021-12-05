@@ -1,6 +1,0 @@
-/home/ines/linux_cmd/build/bin/cd
-/home/ines/linux_cmd/build/bin/cp
-/home/ines/linux_cmd/build/bin/rm
-/home/ines/linux_cmd/build/bin/mv
-/home/ines/linux_cmd/build/bin/grep
-/home/ines/linux_cmd/build/bin/file_manager
