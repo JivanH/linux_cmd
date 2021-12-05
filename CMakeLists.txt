@@ -5,3 +5,6 @@ add_subdirectory(cp)
 add_subdirectory(rm)
 add_subdirectory(mv)
 add_subdirectory(grep)
+add_subdirectory(file_manager)
+
+

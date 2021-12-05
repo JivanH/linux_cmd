@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ines/linux_cmd/grep/grep.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+sys/stat.h
+-
+dirent.h
+-
+limits.h
+-
+unistd.h
+-
+

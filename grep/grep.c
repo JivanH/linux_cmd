@@ -5,6 +5,8 @@
 #include <dirent.h>
 #include <limits.h>
 #include <unistd.h>
+
+
 int isReg(const char* path){
   struct stat S;
   stat(path,&S);

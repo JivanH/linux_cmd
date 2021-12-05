@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ines/linux_cmd/cp/cp.c
+stdio.h
+-
+dirent.h
+-
+sys/types.h
+-
+errno.h
+-
+stdlib.h
+-
+
