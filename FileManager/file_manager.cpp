@@ -7,7 +7,7 @@
 #include <cstring>
 #include <sys/wait.h>
 using namespace std;
-int main(int* argc,char* argv[]){
+int main(int argc,char* argv[]){
 	while(true){
 		cout<<"0: for exit\n";
 		cout<<"1. cd: directory\n";
@@ -16,12 +16,13 @@ int main(int* argc,char* argv[]){
 		cout<<"4. mv: dest 1, dest 2\n";
 		cout<<"5. grep: <word> destination\n";
 		
+		char* file = (char*)malloc(100);
 		char* path = (char *) malloc(100);
 		strcpy(path,argv[0]);
-		path++;
-		
-		char* file = (char*)malloc(100);
-		getcwd(file,100);
+		if(argv[0][0] == '.'){
+			path++;
+			getcwd(file,100);
+		}
 		strcat(file,dirname(path));
 		int cmd;
 		cin>>cmd;
@@ -40,6 +41,11 @@ int main(int* argc,char* argv[]){
 				execv(arg_list_cd[0], arg_list_cd);
 				_exit(0);
 			}
+			else if(pid < 0)
+			{
+				cout<<"Fork Failed\n";
+				_exit(0);
+			}
 			wait(NULL);
 			break;
 	       }case 2: {
@@ -53,6 +59,11 @@ int main(int* argc,char* argv[]){
 				execv(arg_list_cp[0], arg_list_cp);
 				_exit(0);
 			}
+			else if(pid < 0)
+			{
+				cout<<"Fork Failed\n";
+				_exit(0);
+			}
 			wait(NULL);
 			break;	
 	       }case 3: {
@@ -63,6 +74,11 @@ int main(int* argc,char* argv[]){
 			if(pid == 0){
 				char* arg_list_rm[] = {file,arg1_rm,NULL};
 				execv(arg_list_rm[0], arg_list_rm);
+				_exit(0);
+			}
+			else if(pid < 0)
+			{
+				cout<<"Fork Failed\n";
 				_exit(0);
 			}
 			wait(NULL);
@@ -78,6 +94,11 @@ int main(int* argc,char* argv[]){
 				execv(arg_list_mv[0], arg_list_mv);
 				_exit(0);
 			}
+			else if(pid < 0)
+			{
+				cout<<"Fork Failed\n";
+				_exit(0);
+			}
 			wait(NULL);
 			break;
 	       }case 5: {
@@ -89,6 +110,11 @@ int main(int* argc,char* argv[]){
 			if(pid == 0){
 				char* arg_list_gr[] = {file,arg1_gr,arg2_gr,NULL};
 				execv(arg_list_gr[0], arg_list_gr);
+				_exit(0);
+			}
+			else if(pid < 0)
+			{
+				cout<<"Fork Failed\n";
 				_exit(0);
 			}
 			wait(NULL);
