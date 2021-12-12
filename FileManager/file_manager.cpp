@@ -3,8 +3,11 @@
 #include <stddef.h>
 #include <unistd.h>
 #include <string>
+#include <libgen.h>
+#include <cstring>
+#include <sys/wait.h>
 using namespace std;
-int main(){
+int main(int* argc,char* argv[]){
 	while(true){
 		cout<<"0: for exit\n";
 		cout<<"1. cd: directory\n";
@@ -13,6 +16,13 @@ int main(){
 		cout<<"4. mv: dest 1, dest 2\n";
 		cout<<"5. grep: <word> destination\n";
 		
+		char* path = (char *) malloc(100);
+		strcpy(path,argv[0]);
+		path++;
+		
+		char* file = (char*)malloc(100);
+		getcwd(file,100);
+		strcat(file,dirname(path));
 		int cmd;
 		cin>>cmd;
 		if(cmd == 0){
@@ -21,61 +31,72 @@ int main(){
 		}
 		switch (cmd){
 		case 1: {
-			string arg1_cd;
+			char* arg1_cd = (char*)malloc(100);
 			cin>>arg1_cd;
-			string prog_cd = "../bin/cd";
+			strcat(file,"/cd\0");
 			pid_t pid = fork();
 			if(pid == 0){
-				char *arg_list_cd[] = {prog_cd.data(),arg1_cd.data(),NULL};
+				char *const arg_list_cd[] = {file,arg1_cd,NULL};
 				execv(arg_list_cd[0], arg_list_cd);
+				_exit(0);
 			}
+			wait(NULL);
 			break;
 	       }case 2: {
-			string arg1_cp;
-			string arg2_cp;
+			char* arg1_cp = (char*)malloc(100);
+			char* arg2_cp = (char*)malloc(100);
 			cin>>arg1_cp>>arg2_cp;
-			string prog_cp = "../bin/cp";
+			strcat(file,"/cp\0");
 			pid_t pid = fork();
 			if(pid == 0){
-				char* arg_list_cp[] = {prog_cp.data(),arg1_cp.data(),arg2_cp.data(),NULL};
+				char* arg_list_cp[] = {file,arg1_cp,arg2_cp,NULL};
 				execv(arg_list_cp[0], arg_list_cp);
+				_exit(0);
 			}
+			wait(NULL);
 			break;	
 	       }case 3: {
-			string prog_rm = "../bin/rm";
-			string arg1_rm;
+	       		char* arg1_rm = (char*)malloc(100);
 			cin>>arg1_rm;
+			strcat(file,"/rm\0");
 			pid_t pid = fork();
 			if(pid == 0){
-				char* arg_list_rm[] = {prog_rm.data(),arg1_rm.data(),NULL};
+				char* arg_list_rm[] = {file,arg1_rm,NULL};
 				execv(arg_list_rm[0], arg_list_rm);
+				_exit(0);
 			}
+			wait(NULL);
 			break;
 	       }case 4: {
-			string prog_mv = "../bin/mv";
-			string arg1_mv;
-			string arg2_mv;
+			char* arg1_mv = (char*)malloc(100);
+			char* arg2_mv = (char*)malloc(100);
 			cin>>arg1_mv>>arg2_mv;
+			strcat(file,"/mv\0");
 			pid_t pid = fork();
 			if(pid == 0){
-				char* arg_list_mv[] = {prog_mv.data(),arg1_mv.data(),arg2_mv.data(),NULL};
+				char* arg_list_mv[] = {file,arg1_mv,arg2_mv,NULL};
 				execv(arg_list_mv[0], arg_list_mv);
+				_exit(0);
 			}
+			wait(NULL);
 			break;
 	       }case 5: {
-			string prog_gr = "../bin/grep";
-			string arg1_gr;
-			string arg2_gr;
+	       		char* arg1_gr = (char*)malloc(100);
+			char* arg2_gr = (char*)malloc(100);
 			cin>>arg1_gr>>arg2_gr;
+			strcat(file,"/grep\0");
 			pid_t pid = fork();
 			if(pid == 0){
-				char* arg_list_gr[] = {prog_gr.data(),arg1_gr.data(),arg2_gr.data(),NULL};
+				char* arg_list_gr[] = {file,arg1_gr,arg2_gr,NULL};
 				execv(arg_list_gr[0], arg_list_gr);
+				_exit(0);
 			}
+			wait(NULL);
 			break;
 		}
 		default:
 			cout<<("please, read the instructions\n");			
 		}
 	}
+	return 0;
 }
