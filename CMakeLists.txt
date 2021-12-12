@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.10)
+project(linux_cmd)
+add_executable(cd cd/cd.cpp)
+add_executable(grep grep/grep.cpp)
+add_executable(rm rm/rm.cpp)
+add_executable(mv mv/mv.cpp)
+add_executable(fm FileManager/file_manager.cpp)
+install(TARGETS cd grep rm mv fm DESTINATION ${CMAKE_BINARY_DIR}/../bin)
