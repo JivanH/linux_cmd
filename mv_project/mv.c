@@ -10,8 +10,8 @@ return 1;}
 int result=rename(argv[1],argv[2]);
 if (result==0)
 {
-printf("The file is renamed successfully\n.");}
+printf("The file is renamed successfully.\n");}
 else{
-printf("The file could not be renamed\n.");}
+printf("The file could not be renamed.\n");}
 return 0;
 }
