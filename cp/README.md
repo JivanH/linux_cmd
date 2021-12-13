@@ -1,1 +1,0 @@
-# Readme about cp instrument
