@@ -8,9 +8,7 @@ int main(int argc, char** argv) {
 	  printf("Please specify correct arguments\n");
 	  return 1;
   }
-
-  char buffer[100];
-
+char buffer[100];
   printf("Origin directory is %s\n", getcwd(buffer, 100));
 
   int result = chdir(argv[1]);
@@ -22,8 +20,5 @@ int main(int argc, char** argv) {
   }
 
   printf("Changed directory is %s\n", getcwd(buffer, 100));
-
-
-
   return 0;
 }
